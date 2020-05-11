@@ -1,6 +1,12 @@
 import random
-from gtn.config.config import LearnerConfig
+from gtn.config.config import LearnerConfig, GeneratorConfig
+from gtn.models import Learner, Generator
 
 random.seed(1)
-learner_config = LearnerConfig(random.randint(32, 128), random.randint(64, 256), random.randint(64, 256))
-print(learner_config.learner_conv1_filters)
+LearnerConfig(random.randint(32, 128), random.randint(64, 256), random.randint(64, 256), 10)
+generator = Generator(GeneratorConfig)
+print(generator)
+for i in range(3):
+
+    learner = Learner(LearnerConfig(random.randint(32, 128), random.randint(64, 256), random.randint(64, 256), 10))
+    print(learner)
